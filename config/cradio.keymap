@@ -87,7 +87,7 @@
             
             combo_fun {
                 timeout-ms = <20>;
-                key-positions = <30 31>;
+                key-positions = <32 34>;
                 bindings = <&mo _FUN>;
                 layers = <0 1 2 3 4 5>;
             };
@@ -120,7 +120,7 @@
        		nav {
 		bindings = <
             &none       &none       &none       &none       &none                   &none       &none       &none       &none       &none  
-            &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHFT   &none                   &none       &none       &none       &none       &none
+            &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHFT   &none                   &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &kp CAPS
             &none       &none       &none       &none       &none                   &none       &none       &trans      &none       &none
                                                 &none       &trans  				&kp RET     &kp BSPC 
 		>;
