@@ -12,7 +12,7 @@
 #define             _NAV     1
 #define             _MEDIA   2
 #define             _NUM     3
-#define             _SYMBOL  4
+#define             _SYM     4
 #define             _FUN     5
 
 #define VOL_U       &kp C_VOL_UP
@@ -24,7 +24,8 @@
 #define BT3         &bt BT_SEL 3
 
 #define SPC_SYM     &lt _SYM   SPC
-#define ESC_NAV     &lt _NAV   ESC
+#define ESC_MED     &lt _MEDIA ESC
+#define BSPC_NAV    &lt _NAV   BSPC
 #define RET_NUM     &lt _NUM   RET
 
 #define A_GUI       &hm LGUI  A
@@ -60,18 +61,21 @@
                 timeout-ms = <50>;
                 key-positions = <11 12>;
                 bindings = <&kp ESC>;
+                layers = <0 1 2 3 4 5>;
             };
 
             combo_tab {
                 timeout-ms = <20>;
                 key-positions = <12 13>;
                 bindings = <&kp TAB>;
+                layers = <0 1 2 3 4 5>;
             };
 
             combo_ret {
                 timeout-ms = <20>;
                 key-positions = <17 18>;
                 bindings = <&kp RET>;
+                layers = <0 1 2 3 4 5>;
             };
             
             combo_caps_word {
@@ -94,7 +98,7 @@
                 compatible = "zmk,behavior-hold-tap";
                 label = "HOMEROW_MODS";
                 #binding-cells = <2>;
-                tapping-term-ms = <220>
+                tapping-term-ms = <220>;
                 quick-tap-ms = <50>;
                 flavor = "tap-preferred";
                 bindings = <&kp>, <&kp>;
@@ -109,24 +113,24 @@
             &kp Q       &kp W       &kp F       &kp P       &kp G 				    &kp J       &kp L       &kp U       &kp Y       &kp SEMI
             A_GUI       R_ALT       S_CTRL      T_SHFT      &kp D 			        &kp H       N_SHFT      E_CTRL      I_ALT       O_GUI
             &kp Z       &kp X       &kp C       &kp V       &kp B                   &kp K       &kp M       &kp COMMA   &kp DOT     &kp SLASH
-                                                ESC_NAV     &kp BSPC  				SPC_SYM     RET_NUM 
+                                                ESC_MED     BSPC_NAV  				SPC_SYM     RET_NUM 
 		>;
 		};
 
        		nav {
 		bindings = <
-            &none       &none       &none       &kp N4      &none                   &kp N6      &kp N7      &kp N8      &kp N9      &kp N0  
-            &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHFT   &none                   &kp LBRC    &kp RBRC    &kp RBKT    &kp LBKT    &kp SQT
-            &none       &none       &none       &none       &none                   &kp MINUS   &kp EQUAL   &trans      &trans      BSLH_SHFT
-                                                &none       &trans  				&kc RET     &kc BSPC 
+            &none       &none       &none       &none       &none                   &none       &none       &none       &none       &none  
+            &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHFT   &none                   &none       &none       &none       &none       &none
+            &none       &none       &none       &none       &none                   &none       &none       &trans      &none       &none
+                                                &none       &trans  				&kp RET     &kp BSPC 
 		>;
 		};
 		
             media {
 		bindings = <
             &none       &none       &none       &none       &none  				    &none       &none       &none       &none       &none  
-            &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHFT   &none                   &kp C_PREV  VOL_DN      VOL_UP      &kp C_PREV  &none
-            &none       &none       &none       &none       &none                   &none       BT0         BT1         BT3         BT4
+            &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHFT   &none                   &kp C_PREV  VOL_D       VOL_U       &kp C_PREV  &none
+            &none       &none       &none       &none       &none                   &none       BT0         BT1         BT2         BT3
                                                 &trans      &none                   &kp C_STOP  &kp C_PP 
 		>;
 		};	
