@@ -1,0 +1,219 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/zmk/bt.h>
+
+#define _COLEMAK    0
+#define _LOWER      1
+#define _RAISE      2
+#define _ADJUST     3
+#define _NUMPAD     4
+#define _SYMBOL     5
+
+#define ADJUST      &mo _ADJUST
+#define LOWER       &mo _LOWER
+#define RAISE       &mo _RAISE
+
+#define ESC_LOW     &lt _LOWER ESC
+
+#define ENT_RSE     &lt _RAISE RET
+
+#define BSLH_SHFT   &sm LSHFT BSLH
+#define FSLH_SHFT   &sm LSHFT FSLH
+#define SQT_ALT     &mt LALT  SQT
+
+// NEW
+#define BT0         &bt BT_SEL 0
+#define BT1         &bt BT_SEL 1
+#define BT2         &bt BT_SEL 2
+#define BT3         &bt BT_SEL 3
+
+#define VOL_U       &kp C_VOL_UP
+#define VOL_D       &kp C_VOL_DN
+
+#define SPC_SFT     &hm LSHFT SPC
+
+#define A_GUI       &hm LGUI  A
+#define R_ALT       &hm LALT  R
+#define S_CTRL      &hm LCTRL S
+#define T_SHFT      &hm LSHFT T
+
+#define N_SHFT      &hm LSHFT N
+#define E_CTRL      &hm LCTRL E
+#define I_ALT       &hm LALT  I
+#define O_GUI       &hm LGUI  O
+
+#define W_SYM       &lt _SYMBOL W
+#define Q_NUM       &lt _NUMPAD Q
+#define M_LOW       &lt _LOWER  M
+#define D_LOW       &lt _LOWER  D
+#define V_RSE       &lt _RAISE  V
+#define H_RSE       &lt _RAISE  H
+
+&mt {
+    flavor = "tap-preferred";
+    tapping_term_ms = <185>;
+    retro-tap;
+};
+
+&caps_word {
+    continue-list = <UNDERSCORE MINUS BACKSPACE>;
+};
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <20>;
+			//               R  S
+            key-positions = <14 15>;
+            bindings = <&kp ESC>;
+            layers = <0>;
+        };
+        combo_tab {
+            timeout-ms = <20>;
+			//               S  T
+            key-positions = <15 16>;
+            bindings = <&kp TAB>;
+            layers = <0>;
+        };
+        combo_ret {
+            timeout-ms = <20>;
+			//               E  I
+            key-positions = <20 21>;
+            bindings = <&kp RET>;
+            layers = <0>;
+        };
+        combo_left_shift {
+            timeout-ms = <20>;
+			//               F P
+            key-positions = <3 4>;
+            bindings = <&sk LSHIFT>;
+            layers = <0 1 2 3 4 5>;
+        };
+        combo_right_shift {
+            timeout-ms = <20>;
+			//               L U
+            key-positions = <7 8>;
+            bindings = <&sk RSHIFT>;
+            layers = <0 1 2 3 4 5>;
+        };
+        combo_caps_word {
+            timeout-ms = <20>;
+			//               C  V
+            key-positions = <27 28>;
+            bindings = <&caps_word>;
+            layers = <0 1 2 3 4 5>;
+        };
+        combo_lbrc {
+            timeout-ms = <20>;
+			//               T  D
+            key-positions = <13 14>;
+            bindings = <&kp LBRC>;
+            layers = <0 1 2 3 4 5>;
+        };
+        combo_rbrc {
+            timeout-ms = <20>;
+			//               T  D
+            key-positions = <15 16>;
+            bindings = <&kp LBRC>;
+            layers = <0 1 2 3 4 5>;
+        };
+    };
+
+    behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <220>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+        tm: tight_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TIGHT_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <0>;
+            flavor = "hold-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+        sm: shift_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SHIFT_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <175>;
+            quick-tap-ms = <0>;
+            flavor = "hold-preferred";
+            bindings = <&kp>, <&kp>;
+			retro-tap;
+        };
+    };
+
+	keymap {
+		compatible = "zmk,keymap";
+
+		colemak_layer {
+            label = "COLEMAK";
+			bindings = <
+                &kp TAB     Q_NUM       W_SYM     &kp F     &kp P     &kp G                              &kp J       &kp L     &kp U         &kp Y       &kp SEMI     &kp BSPC
+                &kp ESC     A_GUI       R_ALT     S_CTRL    T_SHFT    D_LOW                              H_RSE       N_SHFT    E_CTRL        I_ALT       O_GUI        &kp RET
+                &kp LSHFT   &kp Z       &kp X     &kp C     V_RSE     &kp B                              &kp K       M_LOW     &kp COMMA     &kp DOT     &kp FSLH     &kp RSHFT
+                            &kp HOME    &kp END   &kp LGUI  ESC_LOW   &kp BSPC      &trans &trans        SPC_SFT     ENT_RSE   &kp DEL       &none       &none
+			>;
+		};
+
+		lower_layer {
+            label = "LOWER";
+			bindings = <
+                &trans      &kp N1      &kp N2    &kp N3    &kp N4    &kp N5                             &kp N6      &kp N7    &kp N8        &kp N9      &kp N0       &trans
+                &trans      &kp GRAVE   VOL_D     VOL_U     &kp ESC   &kp LBRC                           &kp LBRC    &kp RBRC  &kp LBKT      &kp RBKT    &kp SQT      &trans
+                &trans      &kp LSHFT   &trans    &trans    &kp LGUI  &kp C_PP                           &kp MINUS   &kp EQUAL &trans        &trans      BSLH_SHFT    &trans
+                            &trans      &trans    &trans    &none     &kp BSPC      &trans &trans        SPC_SFT     ADJUST    &trans        &trans      &trans
+			>;
+		};
+
+		raise_layer {
+            label = "RAISE";
+			bindings = <
+                &trans      &kp N1      &kp N2    &kp N3    &kp N4    &kp N5                             &kp N6      &kp N7    &kp N8        &kp N9      &kp N0       &trans
+                &trans      &kp GRAVE   &trans    &trans    &kp TAB   &kp LBRC                           &kp LEFT    &kp DOWN  &kp UP        &kp RIGHT   &kp SQT      &trans
+                &trans      &kp LSHFT   &trans    &trans    &kp LGUI  &kp C_PP                           &kp MINUS   &kp EQUAL &trans        &trans      BSLH_SHFT    &trans
+                            &trans      &trans    &trans    ADJUST    &kp BSPC      &trans &trans        &kp SPACE   &none     &trans        &trans      &trans
+			>;
+		};
+
+		adjust_layer {
+            label = "ADJUST";
+			bindings = <
+                &none       BT0         BT1       BT2       BT3       &bt BT_CLR                         &none       &none     &none         &none       &none        &none
+                &none       &none       &none     &none     &none     &none                              &none       &none     &none         &none       &none        &none
+                &none       &none       &none     &none     &none     &none                              &none       &none     &none         &none       &none        &none
+                            &none       &none     &none     &none     &none         &none  &none         &none       &none     &none         &none       &none
+			>;
+		};
+
+		numpad_layer {
+            label = "NUMPAD";
+			bindings = <
+                &none       &none       &none     &none     &none     &none                              &kp MINUS   &kp N7    &kp N8        &kp N9      &kp EQUAL    &none
+                &none       &none       &none     &none     &none     &none                              &kp PLUS    &kp N4    &kp N5        &kp N6      &kp SLASH    &none
+                &none       &none       &none     &none     &none     &none                              &kp STAR    &kp N1    &kp N2        &kp N3      &kp DOT      &none
+                            &none       &none     &none     &none     &kp BSPC      &none  &none         &kp N0      &none     &none         &none       &none
+			>;
+		};
+
+		symbol_layer {
+            label = "SYMBOL";
+			bindings = <
+                &none       &none       &none     &none     &none     &none                              &kp HASH    &kp RBKT  &kp RBKT      &kp LPAR    &kp RPAR     &none
+                &none       &none       &none     &none     &none     &none                              &kp AT      &kp LBRC  &kp RBRC      &kp DOLLAR  &kp DQT      &none
+                &none       &none       &none     &none     &none     &none                              &kp CARET   &kp EXCL  &kp EQL       &kp AMPS    &kp PIPE     &none
+                            &none       &none     &none     &none     &kp BSPC     &none  &none          &kp SPC     &none     &none         &none       &none
+			>;
+		};
+
+	};
+};
