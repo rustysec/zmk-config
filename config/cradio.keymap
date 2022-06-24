@@ -137,10 +137,10 @@
 		
             num {
 		bindings = <
-            &kp LBKT    &kp 7       &kp 8       &kp 9       &kp RBKT 				&none       &none       &none       &none       &none 
-            &kp SEMI    &kp 4       &kp 5       &kp 6       &kp EQUAL               &none       &kp RSHFT   &kp RCTRL   &kp RALT    &kp RGUI
-            &kp GRAVE   &kp 1       &kp 2       &kp 3       &kp BSLH                &none       &none       &none       &none       &none
-                                                &kp 0       &kp MINUS  				&none       &trans 
+            &kp LBKT    &kp N7      &kp N8      &kp N9      &kp RBKT 				&none       &none       &none       &none       &none 
+            &kp SEMI    &kp N4      &kp N5      &kp N6      &kp EQUAL               &none       &kp RSHFT   &kp RCTRL   &kp RALT    &kp RGUI
+            &kp GRAVE   &kp N1      &kp N2      &kp N3      &kp BSLH                &none       &none       &none       &none       &none
+                                                &kp N0      &kp MINUS  				&none       &trans 
 		>;
 		};	
 		
