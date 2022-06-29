@@ -1,0 +1,6 @@
+if SHIELD_MANTA
+
+config ZMK_KEYBOARD_NAME
+       default "Manta"
+
+endif

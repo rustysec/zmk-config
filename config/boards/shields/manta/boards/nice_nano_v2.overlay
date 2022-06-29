@@ -1,0 +1,14 @@
+#include <dt-bindings/led/led.h>
+
+&spi1 {
+  compatible = "nordic,nrf-spim";
+  status = "okay";
+  mosi-pin = <6>;
+  sck-pin = <5>;
+  miso-pin = <7>;
+};
+
+/ {
+  chosen {
+  };
+};
