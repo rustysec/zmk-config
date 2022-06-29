@@ -45,6 +45,7 @@
 &mt {
     flavor = "tap-preferred";
     tapping_term_ms = <185>;
+    quick-tap-ms = <50>;
 	retro-tap;
 };
 
@@ -121,7 +122,7 @@
                 
        		default_layer {
 		bindings = <
-            &kp Q       &kp W       &kp F       &kp P       &kp G 				    &kp J       &kp L       &kp U       &kp Y       &kp SEMI
+            &kp Q       &kp W       &kp F       &kp P       &kp G 				    &kp J       &kp L       &kp U       &kp Y       &kp SQT
             A_GUI       R_ALT       S_CTRL      T_SHFT      &kp D 			        &kp H       N_SHFT      E_CTRL      I_ALT       O_GUI
             &kp Z       &kp X       &kp C       &kp V       &kp B                   &kp K       &kp M       &kp COMMA   &kp DOT     &kp SLASH
                                                 ESC_MED     BSPC_NAV  				SPC_SYM     RET_NUM 
