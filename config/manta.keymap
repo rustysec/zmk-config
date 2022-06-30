@@ -1,0 +1,181 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+#define             _BASE    0
+#define             _NAV     1
+#define             _MEDIA   2
+#define             _NUM     3
+#define             _SYM     4
+#define             _FUN     5
+
+#define VOL_U       &kp C_VOL_UP
+#define VOL_D       &kp C_VOL_DN
+#define PB          &kp PAUSE_BREAK
+
+#define BT0         &bt BT_SEL 0
+#define BT1         &bt BT_SEL 1
+#define BT2         &bt BT_SEL 2
+#define BT3         &bt BT_SEL 3
+
+#define SPC_SYM     &lt _SYM   SPC
+#define B_MED       &lt _MEDIA B
+#define BSPC_NAV    &lt _NAV   BSPC
+#define K_NUM       &lt _NUM   K
+#define M_FUN       &lt _FUN   M
+
+#define A_GUI       &hm LGUI  A
+#define R_ALT       &hm LALT  R
+#define S_CTRL      &hm LCTRL S
+#define T_SHFT      &hm LSHFT T
+
+#define N_SHFT      &hm RSHFT N
+#define E_CTRL      &hm RCTRL E
+#define I_ALT       &hm RALT  I
+#define O_GUI       &hm RGUI  O
+
+&kscan0 {
+    debounce-period  = <12>;
+};
+
+&mt {
+    tapping-term-ms = <185>;
+    quick-tap-ms = <185>;
+};
+
+&lt {
+    flavor = "balanced";
+    tapping-term-ms = <185>;
+    quick-tap-ms = <185>;
+};
+
+&caps_word {
+    continue-list = <UNDERSCORE MINUS BACKSPACE>;
+};
+
+/ { 
+
+        combos {
+            compatible = "zmk,combos";
+
+            combo_esc {
+                timeout-ms = <50>;
+                key-positions = <13 14>;
+                bindings = <&kp ESC>;
+                layers = <0 1 2 3 4 5>;
+            };
+
+            combo_tab {
+                timeout-ms = <20>;
+                key-positions = <14 15>;
+                bindings = <&kp TAB>;
+                layers = <0 1 2 3 4 5>;
+            };
+
+            combo_ret {
+                timeout-ms = <20>;
+                key-positions = <21 22>;
+                bindings = <&kp RET>;
+                layers = <0 1 2 3 4 5>;
+            };
+            
+            combo_caps_word {
+                timeout-ms = <20>;
+                key-positions = <25 26>;
+                bindings = <&caps_word>;
+                layers = <0 1 2 3 4 5>;
+            };
+            
+            combo_fun {
+                timeout-ms = <20>;
+                key-positions = <28 29>;
+                bindings = <&mo _FUN>;
+                layers = <0 1 2 3 4 5>;
+            };
+            
+            combo_space {
+                timeout-ms = <20>;
+                key-positions = <20 31>;
+                bindings = <&kp SPC>;
+                layers = <0 1 2 3 4 5>;
+            };
+            
+            combo_backspace {
+                timeout-ms = <20>;
+                key-positions = <15 28>;
+                bindings = <&kp BSPC>;
+                layers = <0 1 2 3 4 5>;
+            };
+        };
+    
+        behaviors {
+            hm: homerow_mods {
+                compatible = "zmk,behavior-hold-tap";
+                label = "HOMEROW_MODS";
+                #binding-cells = <2>;
+                tapping-term-ms = <220>;
+                quick-tap-ms = <50>;
+                flavor = "tap-preferred";
+                bindings = <&kp>, <&kp>;
+            };
+        };
+
+        keymap {
+            compatible = "zmk,keymap";
+                
+       		default_layer {
+		bindings = <
+            &kp Q       &kp W       &kp F       &kp P       &kp G       &none       &none       &kp J       &kp L       &kp U       &kp Y       &kp SQT
+            A_GUI       R_ALT       S_CTRL      T_SHFT      &kp D 	    &none       &none	    &kp H       N_SHFT      E_CTRL      I_ALT       O_GUI
+            &kp Z       &kp X       &kp C       &kp V       B_MED       BSPC_NAV    SPC_SYM     K_NUM       M_FUN       &kp COMMA   &kp DOT     &kp SLASH
+		>;
+		};
+
+       		nav {
+		bindings = <
+            &none       &none       &none       &none       &none       &none       &none       &none       &none       &none       &none       &none  
+            &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHFT   &none       &none       &none       &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &kp CAPS
+            &none       &none       &none       &none       &none       &none       &none       &none       &none       &trans      &none       &none
+		>;
+		};
+		
+            media {
+		bindings = <
+            &none       &none       &none       &none       &none       &none       &none  	    &none       &none       &none       &none       &none  
+            &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHFT   &none       &none       &none       &kp C_PREV  VOL_D       VOL_U       &kp C_PREV  &none
+            &none       &none       &none       &none       &none       &none       &none       &none       BT0         BT1         BT2         BT3
+		>;
+		};	
+		
+            num {
+		bindings = <
+            &kp LBKT    &kp N7      &kp N8      &kp N9      &kp RBKT    &none       &none  	    &kp N0      &none       &none       &none       &none 
+            &kp SEMI    &kp N4      &kp N5      &kp N6      &kp EQUAL   &none       &none       &none       &kp RSHFT   &kp RCTRL   &kp RALT    &kp RGUI
+            &kp GRAVE   &kp N1      &kp N2      &kp N3      &kp BSLH    &kp MINUS   &none       &none       &none       &none       &none       &none
+		>;
+		};	
+		
+            sym {
+		bindings = <
+            &kp LBRC    &kp AMPS    &kp STAR    &kp LPAR    &kp RBRC    &none       &none       &kp RPAR    &none       &none       &none       &none 
+            &kp COLON   &kp DLLR    &kp PERCENT &kp CARET   &kp PLUS    &none       &none       &none       &kp RSHFT   &kp RCTRL   &kp RALT    &kp RGUI
+            &kp TILDE   &kp EXCL    &kp AT      &kp HASH    &kp PIPE    &kp UNDER   &none       &none       &none       &none       &none       &none
+		>;
+		};	
+
+            fun {
+		bindings = <
+            &kp F12     &kp F7      &kp F8      &kp F9      &kp PSCRN   &none       &none	    &none       &none       &none       &none       &none 
+            &kp F11     &kp F4      &kp F5      &kp F6      &kp SLCK    &none       &none       &none       &kp RSHFT   &kp RCTRL   &kp RALT    &kp RGUI
+            &kp F10     &kp F1      &kp F2      &kp F3      PB          &none       &none       &none       &none       &none       &none       &none
+		>;
+		};	
+		
+	};
+};
