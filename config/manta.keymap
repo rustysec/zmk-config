@@ -27,8 +27,9 @@
 #define SPC_SYM     &lt _SYM   SPC
 #define B_MED       &lt _MEDIA B
 #define BSPC_NAV    &lt _NAV   BSPC
-#define K_NUM       &lt _NUM   K
-#define M_FUN       &lt _FUN   M
+#define K_SYM       &lt _SYM   K
+#define M_NUM       &lt _NUM   M
+#define COMMA_FUN   &lt _FUN   COMMA
 
 #define A_GUI       &hm LGUI  A
 #define R_ALT       &hm LALT  R
@@ -100,14 +101,14 @@
             };
             
             combo_space {
-                timeout-ms = <20>;
+                timeout-ms = <75>;
                 key-positions = <20 31>;
                 bindings = <&kp SPC>;
                 layers = <0 1 2 3 4 5>;
             };
             
             combo_backspace {
-                timeout-ms = <20>;
+                timeout-ms = <75>;
                 key-positions = <15 28>;
                 bindings = <&kp BSPC>;
                 layers = <0 1 2 3 4 5>;
@@ -133,7 +134,7 @@
 		bindings = <
             &kp Q       &kp W       &kp F       &kp P       &kp G       &none       &none       &kp J       &kp L       &kp U       &kp Y       &kp SQT
             A_GUI       R_ALT       S_CTRL      T_SHFT      &kp D 	    &none       &none	    &kp H       N_SHFT      E_CTRL      I_ALT       O_GUI
-            &kp Z       &kp X       &kp C       &kp V       B_MED       BSPC_NAV    SPC_SYM     K_NUM       M_FUN       &kp COMMA   &kp DOT     &kp SLASH
+            &kp Z       &kp X       &kp C       &kp V       B_MED       BSPC_NAV    SPC_SYM     K_SYM       M_NUM       COMMA_FUN   &kp DOT     &kp SLASH
 		>;
 		};
 
@@ -155,17 +156,17 @@
 		
             num {
 		bindings = <
-            &kp LBKT    &kp N7      &kp N8      &kp N9      &kp RBKT    &none       &none  	    &kp N0      &none       &none       &none       &none 
+            &kp LBKT    &kp N7      &kp N8      &kp N9      &kp RBKT    &none       &none  	    &none       &none       &none       &none       &none 
             &kp SEMI    &kp N4      &kp N5      &kp N6      &kp EQUAL   &none       &none       &none       &kp RSHFT   &kp RCTRL   &kp RALT    &kp RGUI
-            &kp GRAVE   &kp N1      &kp N2      &kp N3      &kp BSLH    &kp MINUS   &none       &none       &none       &none       &none       &none
+            &kp GRAVE   &kp N1      &kp N2      &kp N3      &kp BSLH    &kp MINUS   &none       &kp N0      &kp MINUS   &none       &none       &none
 		>;
 		};	
 		
             sym {
 		bindings = <
-            &kp LBRC    &kp AMPS    &kp STAR    &kp LPAR    &kp RBRC    &none       &none       &kp RPAR    &none       &none       &none       &none 
+            &kp LBRC    &kp AMPS    &kp STAR    &kp LPAR    &kp RBRC    &none       &none       &none       &none       &none       &none       &none 
             &kp COLON   &kp DLLR    &kp PERCENT &kp CARET   &kp PLUS    &none       &none       &none       &kp RSHFT   &kp RCTRL   &kp RALT    &kp RGUI
-            &kp TILDE   &kp EXCL    &kp AT      &kp HASH    &kp PIPE    &kp UNDER   &none       &none       &none       &none       &none       &none
+            &kp TILDE   &kp EXCL    &kp AT      &kp HASH    &kp PIPE    &kp UNDER   &none       &kp RPAR    &kp UNDER   &none       &none       &none
 		>;
 		};	
 
