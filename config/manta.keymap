@@ -25,7 +25,8 @@
 #define BT3         &bt BT_SEL 3
 
 #define SPC_SYM     &lt _SYM   SPC
-#define B_MED       &lt _MEDIA B
+#define V_MED       &lt _MEDIA V
+#define B_NAV       &lt _NAV   B
 #define BSPC_NAV    &lt _NAV   BSPC
 #define K_SYM       &lt _SYM   K
 #define M_NUM       &lt _NUM   M
@@ -88,14 +89,14 @@
             
             combo_caps_word {
                 timeout-ms = <20>;
-                key-positions = <25 26>;
+                key-positions = <23 24>;
                 bindings = <&caps_word>;
                 layers = <0 1 2 3 4 5>;
             };
             
             combo_fun {
                 timeout-ms = <20>;
-                key-positions = <28 29>;
+                key-positions = <31 32>;
                 bindings = <&mo _FUN>;
                 layers = <0 1 2 3 4 5>;
             };
@@ -134,7 +135,7 @@
 		bindings = <
             &kp Q       &kp W       &kp F       &kp P       &kp G       &none       &none       &kp J       &kp L       &kp U       &kp Y       &kp SQT
             A_GUI       R_ALT       S_CTRL      T_SHFT      &kp D 	    &none       &none	    &kp H       N_SHFT      E_CTRL      I_ALT       O_GUI
-            &kp Z       &kp X       &kp C       &kp V       B_MED       BSPC_NAV    SPC_SYM     K_SYM       M_NUM       COMMA_FUN   &kp DOT     &kp SLASH
+            &kp Z       &kp X       &kp C       V_MED       B_NAV       BSPC_NAV    SPC_SYM     K_SYM       M_NUM       COMMA_FUN   &kp DOT     &kp SLASH
 		>;
 		};
 
@@ -158,7 +159,7 @@
 		bindings = <
             &kp LBKT    &kp N7      &kp N8      &kp N9      &kp RBKT    &none       &none  	    &none       &none       &none       &none       &none 
             &kp SEMI    &kp N4      &kp N5      &kp N6      &kp EQUAL   &none       &none       &none       &kp RSHFT   &kp RCTRL   &kp RALT    &kp RGUI
-            &kp GRAVE   &kp N1      &kp N2      &kp N3      &kp BSLH    &kp MINUS   &none       &kp N0      &kp MINUS   &none       &none       &none
+            &kp GRAVE   &kp N1      &kp N2      &kp N3      &kp BSLH    &kp MINUS   &none       &kp N0      &trans      &none       &kp DOT     &none
 		>;
 		};	
 		
