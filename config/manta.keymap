@@ -89,7 +89,7 @@
             
             combo_caps_word {
                 timeout-ms = <20>;
-                key-positions = <23 24>;
+                key-positions = <26 27>;
                 bindings = <&caps_word>;
                 layers = <0 1 2 3 4 5>;
             };
@@ -112,7 +112,21 @@
                 timeout-ms = <75>;
                 key-positions = <15 28>;
                 bindings = <&kp BSPC>;
-                layers = <0 1 2 3 4 5>;
+                layers = <0 1 2 5>;
+            };
+            
+            combo_minus {
+                timeout-ms = <75>;
+                key-positions = <15 28>;
+                bindings = <&kp UNDER>;
+                layers = <3>;
+            };
+            
+            combo_underscore {
+                timeout-ms = <75>;
+                key-positions = <15 28>;
+                bindings = <&kp UNDER>;
+                layers = <4>;
             };
         };
     
