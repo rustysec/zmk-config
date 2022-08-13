@@ -118,7 +118,7 @@
             combo_minus {
                 timeout-ms = <75>;
                 key-positions = <15 28>;
-                bindings = <&kp UNDER>;
+                bindings = <&kp MINUS>;
                 layers = <3>;
             };
             
