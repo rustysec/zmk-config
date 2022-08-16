@@ -21,3 +21,5 @@ include:
     shield: naked48
   - board: nice_nano_v2
     shield: manta
+  - board: nice_nano_v2
+    shield: chocv
