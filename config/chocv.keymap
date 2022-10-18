@@ -126,7 +126,7 @@
             &kp Q       &kp W       &kp F       &kp P       &kp G 				    &kp J       &kp L       &kp U       &kp Y       &kp SQT
             A_GUI       R_ALT       S_CTRL      T_SHFT      &kp D 			        &kp H       N_SHFT      E_CTRL      I_ALT       O_GUI
             &kp Z       &kp X       &kp C       &kp V       &kp B                   &kp K       M_NUM       &kp COMMA   &kp DOT     &kp SLASH
-                                    &none       ESC_MED     BSPC_NAV  				SPC_SYM     RET         DEL_FUN
+                                    &none       ESC_MED     BSPC_NAV  				SPC_SYM     &kp RET     DEL_FUN
 		>;
 		};
 
