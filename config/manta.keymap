@@ -173,7 +173,7 @@
 		bindings = <
             &kp LBKT    &kp N7      &kp N8      &kp N9      &kp RBKT    &none       &none  	    &none       &none       &none       &none       &none 
             &kp SEMI    &kp N4      &kp N5      &kp N6      &kp EQUAL   &none       &none       &none       &kp RSHFT   &kp RCTRL   &kp RALT    &kp RGUI
-            &kp GRAVE   &kp N1      &kp N2      &kp N3      &kp BSLH    &none       &none       &kp N0      &trans      &kp DOT     &none       &none
+            &kp GRAVE   &kp N1      &kp N2      &kp N3      &kp BSLH    &none       &none       &kp N0      &none       &kp DOT     &kp MINUS   &none
 		>;
 		};	
 		
