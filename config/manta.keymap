@@ -102,14 +102,14 @@
             };
             
             combo_k {
-                timeout-ms = <75>;
+                timeout-ms = <50>;
                 key-positions = <20 31>;
                 bindings = <&kp K>;
                 layers = <0 1 2 3 4 5>;
             };
             
             combo_b {
-                timeout-ms = <75>;
+                timeout-ms = <50>;
                 key-positions = <15 28>;
                 bindings = <&kp B>;
                 layers = <0 1 2 5>;
