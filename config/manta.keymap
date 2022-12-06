@@ -147,49 +147,49 @@
                 
        		default_layer {
 		bindings = <
-            &kp Q       &kp W       &kp F       &kp P       &kp G       &none       &none       &kp J       &kp L       &kp U       &kp Y       &kp SQT
-            A_GUI       R_ALT       S_CTRL      T_SHFT      &kp D 	    &none       &none	    &kp H       N_SHFT      E_CTRL      I_ALT       O_GUI
-            &kp Z       &kp X       &kp C       V_MED       BSPC_NAV    &none       &none       SPC_SYM     M_NUM       COMMA_FUN   &kp DOT     &kp SLASH
+            &kp Q       &kp W       &kp F       &kp P       &kp G       /**/ &none       &none /**/     &kp J       &kp L       &kp U       &kp Y       &kp SQT
+            A_GUI       R_ALT       S_CTRL      T_SHFT      &kp D 	    /**/ &none       &none /**/	    &kp H       N_SHFT      E_CTRL      I_ALT       O_GUI
+            &kp Z       &kp X       &kp C       V_MED       BSPC_NAV    /**/ &none       &none /**/     SPC_SYM     M_NUM       COMMA_FUN   &kp DOT     &kp SLASH
 		>;
 		};
 
        		nav {
 		bindings = <
-            &none       &none       &none       &none       &none       &none       &none       &none       &none       &none       &none       &none  
-            &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHFT   &none       &none       &none       &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &kp CAPS
-            &none       &none       &none       &none       &none       &none       &none       &none       &none       &trans      &none       &none
+            &none       &none       &none       &none       &none       /**/ &none       &none /**/     &none       &none       &none       &none       &none  
+            &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHFT   &none       /**/ &none       &none /**/     &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &kp CAPS
+            &none       &none       &none       &none       &none       /**/ &none       &none /**/     &none       &none       &trans      &none       &none
 		>;
 		};
 		
             media {
 		bindings = <
-            &none       &none       &none       &none       &none       &none       &none  	    &none       &none       &none       &none       &none  
-            &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHFT   &none       &none       &none       &kp C_PP    VOL_D       VOL_U       &kp C_PREV  &none
-            &none       &none       &none       &none       &none       &none       &none       &none       BT0         BT1         BT2         BT3
+            &none       &none       &none       &none       &none       /**/ &none       &none /**/  	&none       &none       &none       &none       &none  
+            &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHFT   &none       /**/ &none       &none /**/     &kp C_PP    VOL_D       VOL_U       &kp C_PREV  &none
+            &none       &none       &none       &none       &none       /**/ &none       &none /**/     &none       BT0         BT1         BT2         BT3
 		>;
 		};	
 		
             num {
 		bindings = <
-            &kp LBKT    &kp N7      &kp N8      &kp N9      &kp RBKT    &none       &none  	    &none       &none       &none       &none       &none 
-            &kp SEMI    &kp N4      &kp N5      &kp N6      &kp EQUAL   &none       &none       &none       &kp RSHFT   &kp RCTRL   &kp RALT    &kp RGUI
-            &kp GRAVE   &kp N1      &kp N2      &kp N3      &kp BSLH    &none       &none       &kp N0      &none       &kp DOT     &kp MINUS   &none
+            &kp LBKT    &kp N7      &kp N8      &kp N9      &kp RBKT    /**/ &none       &none /**/  	&none       &none       &none       &none       &none 
+            &kp SEMI    &kp N4      &kp N5      &kp N6      &kp EQUAL   /**/ &none       &none /**/     &none       &kp RSHFT   &kp RCTRL   &kp RALT    &kp RGUI
+            &kp GRAVE   &kp N1      &kp N2      &kp N3      &kp BSLH    /**/ &none       &none /**/     &kp N0      &none       &kp DOT     &kp MINUS   &none
 		>;
 		};	
 		
             sym {
 		bindings = <
-            &kp LBRC    &kp AMPS    &kp STAR    &kp LPAR    &kp RBRC    &none       &none       &none       &none       &none       &none       &none 
-            &kp COLON   &kp DLLR    &kp PERCENT &kp CARET   &kp PLUS    &none       &none       &none       &kp RSHFT   &kp RCTRL   &kp RALT    &kp RGUI
-            &kp TILDE   &kp EXCL    &kp AT      &kp HASH    &kp PIPE    &none       &none       &none       &kp UNDER   &kp RPAR    &none       &none
+            &kp LBRC    &kp AMPS    &kp STAR    &kp LPAR    &kp RBRC    /**/ &none       &none /**/     &none       &kp LPAR    &kp RPAR    &none       &none 
+            &kp COLON   &kp DLLR    &kp PERCENT &kp CARET   &kp PLUS    /**/ &none       &none /**/     &none       &kp RSHFT   &kp RCTRL   &kp RALT    &kp RGUI
+            &kp TILDE   &kp EXCL    &kp AT      &kp HASH    &kp PIPE    /**/ &none       &none /**/     &none       &kp RPAR    &kp UNDER   &none       &none
 		>;
 		};	
 
             fun {
 		bindings = <
-            &kp F12     &kp F7      &kp F8      &kp F9      &kp PSCRN   &none       &none	    &none       &none       &none       &none       &none 
-            &kp F11     &kp F4      &kp F5      &kp F6      &kp SLCK    &none       &none       &none       &kp RSHFT   &kp RCTRL   &kp RALT    &kp RGUI
-            &kp F10     &kp F1      &kp F2      &kp F3      PB          &none       &none       &none       &none       &none       &none       &none
+            &kp F12     &kp F7      &kp F8      &kp F9      &kp PSCRN   /**/ &none       &none /**/	    &none       &none       &none       &none       &none 
+            &kp F11     &kp F4      &kp F5      &kp F6      &kp SLCK    /**/ &none       &none /**/     &none       &kp RSHFT   &kp RCTRL   &kp RALT    &kp RGUI
+            &kp F10     &kp F1      &kp F2      &kp F3      PB          /**/ &none       &none /**/     &none       &none       &none       &none       &none
 		>;
 		};	
 		
