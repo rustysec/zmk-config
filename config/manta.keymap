@@ -106,7 +106,7 @@
                 key-positions = <20 31>;
                 bindings = <&kp K>;
                 layers = <0 1 2 3 4 5>;
-                slow-release = true;
+                slow-release = TRUE;
             };
             
             combo_b {
@@ -114,7 +114,7 @@
                 key-positions = <15 28>;
                 bindings = <&kp B>;
                 layers = <0 1 2 5>;
-                slow-release = true;
+                slow-release = TRUE;
             };
             
             combo_minus {
