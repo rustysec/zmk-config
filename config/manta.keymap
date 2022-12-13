@@ -101,6 +101,7 @@
                 layers = <0 1 2 3 4 5>;
             };
             
+            // K position
             combo_k {
                 timeout-ms = <20>;
                 key-positions = <20 31>;
@@ -109,6 +110,15 @@
                 slow-release;
             };
             
+            combo_k_new {
+                timeout-ms = <20>;
+                key-positions = <18 19>;
+                bindings = <&kp K>;
+                layers = <0>;
+                slow-release;
+            };
+            
+            // B position
             combo_b {
                 timeout-ms = <20>;
                 key-positions = <15 28>;
@@ -116,33 +126,35 @@
                 layers = <0 1 2 5>;
                 slow-release;
             };
-            
-            combo_k_new {
-                timeout-ms = <20>;
-                key-positions = <8 9>;
-                bindings = <&kp K>;
-                layers = <0>;
-                slow-release;
-            };
-            
-            combo_b_new {
-                timeout-ms = <20>;
-                key-positions = <2 3>;
-                bindings = <&kp B>;
-                layers = <0>;
-                slow-release;
-            };
-            
-            combo_minus {
+            combo_b_minus {
                 timeout-ms = <75>;
                 key-positions = <15 28>;
                 bindings = <&kp MINUS>;
                 layers = <3>;
             };
-            
-            combo_underscore {
+            combo_b_underscore {
                 timeout-ms = <75>;
                 key-positions = <15 28>;
+                bindings = <&kp UNDER>;
+                layers = <4>;
+            };
+
+            combo_b_new {
+                timeout-ms = <20>;
+                key-positions = <15 16>;
+                bindings = <&kp B>;
+                layers = <0>;
+                slow-release;
+            };
+            combo_b_new_minus {
+                timeout-ms = <75>;
+                key-positions = <15 16>;
+                bindings = <&kp MINUS>;
+                layers = <3>;
+            };
+            combo_b_new_underscore {
+                timeout-ms = <75>;
+                key-positions = <15 16>;
                 bindings = <&kp UNDER>;
                 layers = <4>;
             };
