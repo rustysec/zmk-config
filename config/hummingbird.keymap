@@ -69,7 +69,7 @@
             compatible = "zmk,combos";
 
             combo_esc {
-                timeout-ms = <50>;
+                timeout-ms = <20>;
                 key-positions = <11 12>;
                 bindings = <&kp ESC>;
                 layers = <0 1 2 3 4 5>;
@@ -120,7 +120,7 @@
             };
 
             combo_z {
-                timeout-ms = <75>;
+                timeout-ms = <20>;
                 key-positions = <10 11>;
                 bindings = <&kp Z>;
                 layers = <0>;
@@ -128,13 +128,13 @@
             
             // Slash position combos
             combo_slash {
-                timeout-ms = <75>;
+                timeout-ms = <20>;
                 key-positions = <18 19>;
                 bindings = <&kp SLASH>;
                 layers = <0>;
             };
             combo_bt3 {
-                timeout-ms = <75>;
+                timeout-ms = <20>;
                 key-positions = <18 19>;
                 bindings = <&bt BT_SEL 3>;
                 layers = <0>;
@@ -150,13 +150,13 @@
                 slow-release;
             };
             combo_b_minus {
-                timeout-ms = <75>;
+                timeout-ms = <20>;
                 key-positions = <13 27>;
                 bindings = <&kp MINUS>;
                 layers = <3>;
             };
             combo_b_underscore {
-                timeout-ms = <75>;
+                timeout-ms = <20>;
                 key-positions = <13 27>;
                 bindings = <&kp UNDER>;
                 layers = <4>;
@@ -170,13 +170,13 @@
                 slow-release;
             };
             combo_new_b_minus {
-                timeout-ms = <75>;
+                timeout-ms = <20>;
                 key-positions = <2 3>;
                 bindings = <&kp MINUS>;
                 layers = <3>;
             };
             combo_new_b_underscore {
-                timeout-ms = <75>;
+                timeout-ms = <20>;
                 key-positions = <2 3>;
                 bindings = <&kp UNDER>;
                 layers = <4>;
