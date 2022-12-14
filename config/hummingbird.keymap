@@ -26,10 +26,12 @@
 
 #define SPC_SYM     &lt _SYM   SPC
 #define V_MED       &lt _MEDIA V
+#define ESC_MED     &lt _MEDIA ESC
 #define B_NAV       &lt _NAV   B
 #define BSPC_NAV    &lt _NAV   BSPC
 #define K_SYM       &lt _SYM   K
 #define M_NUM       &lt _NUM   M
+#define RET_NUM     &lt _NUM   RET
 #define COMMA_FUN   &lt _FUN   COMMA
 
 #define A_GUI       &hm LGUI  A
@@ -68,28 +70,28 @@
 
             combo_esc {
                 timeout-ms = <50>;
-                key-positions = <13 14>;
+                key-positions = <11 12>;
                 bindings = <&kp ESC>;
                 layers = <0 1 2 3 4 5>;
             };
 
             combo_tab {
                 timeout-ms = <20>;
-                key-positions = <14 15>;
+                key-positions = <12 13>;
                 bindings = <&kp TAB>;
                 layers = <0 1 2 3 4 5>;
             };
 
             combo_ret {
                 timeout-ms = <20>;
-                key-positions = <21 22>;
+                key-positions = <17 18>;
                 bindings = <&kp RET>;
                 layers = <0 1 2 3 4 5>;
             };
             
             combo_caps_word {
                 timeout-ms = <20>;
-                key-positions = <26 27>;
+                key-positions = <21 22>;
                 bindings = <&caps_word>;
                 layers = <0 1 2 3 4 5>;
             };
@@ -201,7 +203,7 @@
             &kp Q       &kp W       &kp F       &kp P       &kp G       /**/ /**/       &kp J       &kp L       &kp U       &kp Y       &kp SQT
             A_GUI       R_ALT       S_CTRL      T_SHFT      &kp D 	    /**/ /**/	    &kp H       N_SHFT      E_CTRL      I_ALT       O_GUI
             /*z*/       &kp X       &kp C       V_MED       /*b*/       /**/ /**/       /*k*/       M_NUM       COMMA_FUN   &kp DOT     /*SLASH*/
-                                                &none       BSPC_NAV                    SPC_SYM     &none
+                                                ESC_MED     BSPC_NAV                    SPC_SYM     RET_NUM
 		>;
 		};
 
@@ -228,16 +230,16 @@
             &kp LBKT    &kp N7      &kp N8      &kp N9      &kp RBKT    /**/ /**/  	    &none       &none       &none       &none       &none 
             &kp SEMI    &kp N4      &kp N5      &kp N6      &kp EQUAL   /**/ /**/       &none       &kp RSHFT   &kp RCTRL   &kp RALT    &kp RGUI
             /*`*/       &kp N1      &kp N2      &kp N3      /*BSLH*/    /**/ /**/                   &none       &kp DOT     &kp MINUS
-                                                &none       &none                       &none       &none
+                                                &kp N0      &kp DOT                     &none       &none
 		>;
 		};	
 		
             sym {
 		bindings = <
-            &kp LBRC    &kp AMPS    &kp STAR    &kp LPAR    &kp RBRC    /**/ /**/       &none       &kp LPAR    &kp RPAR    &none       &none 
+            &kp LBRC    &kp AMPS    &kp STAR    &kp LPAR    &kp RBRC    /**/ /**/       &kp RPAR    &kp LPAR    &kp RPAR    &none       &none 
             &kp COLON   &kp DLLR    &kp PERCENT &kp CARET   &kp PLUS    /**/ /**/       &none       &kp RSHFT   &kp RCTRL   &kp RALT    &kp RGUI
-            /*~*/       &kp EXCL    &kp AT      &kp HASH    /*PIPE*/    /**/ /**/       &kp RPAR    &kp UNDER   &none
-                                                &none       &none                       &none       &none
+            /*~*/       &kp EXCL    &kp AT      &kp HASH    /*PIPE*/    /**/ /**/       &none       &kp UNDER   &none
+                                                &kp RPAR    &kp UNDER                   &none       &none
 		>;
 		};	
 
