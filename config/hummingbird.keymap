@@ -113,7 +113,7 @@
             
             combo_k_new {
                 timeout-ms = <20>;
-                key-positions = <6 7>;
+                key-positions = <15 16>;
                 bindings = <&kp K>;
                 layers = <0>;
                 slow-release;
@@ -164,20 +164,20 @@
             
             combo_new_b {
                 timeout-ms = <20>;
-                key-positions = <2 3>;
+                key-positions = <13 14>;
                 bindings = <&kp B>;
                 layers = <0>;
                 slow-release;
             };
             combo_new_b_minus {
                 timeout-ms = <20>;
-                key-positions = <2 3>;
+                key-positions = <13 14>;
                 bindings = <&kp MINUS>;
                 layers = <3>;
             };
             combo_new_b_underscore {
                 timeout-ms = <20>;
-                key-positions = <2 3>;
+                key-positions = <13 14>;
                 bindings = <&kp UNDER>;
                 layers = <4>;
             };
@@ -189,7 +189,7 @@
                 label = "HOMEROW_MODS";
                 #binding-cells = <2>;
                 tapping-term-ms = <220>;
-                quick-tap-ms = <50>;
+                quick-tap-ms = <20>;
                 flavor = "tap-preferred";
                 bindings = <&kp>, <&kp>;
             };
