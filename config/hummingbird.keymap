@@ -103,7 +103,7 @@
             
             combo_k {
                 timeout-ms = <20>;
-                key-positions = <20 31>;
+                key-positions = <16 28>;
                 bindings = <&kp K>;
                 layers = <0 1 2 3 4 5>;
                 slow-release;
@@ -111,7 +111,7 @@
             
             combo_k_new {
                 timeout-ms = <20>;
-                key-positions = <8 9>;
+                key-positions = <6 7>;
                 bindings = <&kp K>;
                 layers = <0>;
                 slow-release;
@@ -142,20 +142,20 @@
             // B position combos
             combo_b {
                 timeout-ms = <20>;
-                key-positions = <14 27>;
+                key-positions = <13 27>;
                 bindings = <&kp B>;
                 layers = <0>;
                 slow-release;
             };
             combo_b_minus {
                 timeout-ms = <75>;
-                key-positions = <14 27>;
+                key-positions = <13 27>;
                 bindings = <&kp MINUS>;
                 layers = <3>;
             };
             combo_b_underscore {
                 timeout-ms = <75>;
-                key-positions = <14 27>;
+                key-positions = <13 27>;
                 bindings = <&kp UNDER>;
                 layers = <4>;
             };
